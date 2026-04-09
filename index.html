@@ -3,324 +3,423 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Use - Freya</title>
+  <title>Freya — Terms of Use</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #2B48BC;
+      --surface: #2040b0;
+      --border: rgba(255,255,255,0.18);
+      --accent: #a8c4ff;
+      --accent-soft: rgba(168, 196, 255, 0.12);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.65);
+      --heading: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 72% 8%, rgba(255,255,255,.25) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 55%, rgba(255,255,255,.2) 0%, transparent 100%),
+        radial-gradient(1px 1px at 88% 40%, rgba(255,255,255,.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 80%, rgba(255,255,255,.2) 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 75%, rgba(255,255,255,.25) 0%, transparent 100%),
+        radial-gradient(1px 1px at 95% 65%, rgba(255,255,255,.15) 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 90%, rgba(255,255,255,.2) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .app-name {
+      font-family: 'Instrument Sans', sans-serif;
+      font-style: italic;
+      font-size: 13px;
+      letter-spacing: .25em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: .05em;
+    }
+
+    .meta-item span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      margin: 36px auto 0;
+    }
+
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-bottom: 56px;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    section {
+      margin-bottom: 52px;
+    }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: .2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    section h2 {
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: var(--heading);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section h3 {
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 500;
+      font-size: .95rem;
+      letter-spacing: .05em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin: 28px 0 12px;
+    }
+
+    p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    li { margin-bottom: 6px; }
+
+    .highlight-box {
+      background: var(--accent-soft);
+      border: 1px solid rgba(200, 169, 126, 0.25);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(200, 169, 126, 0.35);
+      transition: border-color .2s;
+    }
+
+    a:hover { border-color: var(--accent); }
+
+    strong { color: var(--heading); font-weight: 500; }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer .footer-app {
+      font-family: 'Instrument Sans', sans-serif;
+      font-style: italic;
+      color: var(--accent);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { padding: 48px 20px 80px; }
+    }
+  </style>
 </head>
 <body>
-  <h2>Terms of Use</h2>
-
-  <p><strong>Published:</strong> 1 January 2026</p>
-  <p><strong>Developer:</strong> Yegor Terokhin</p>
-  <p><strong>Application:</strong> Freya (the “App” or the “Services”)</p>
-
-  <p>
-    These Terms of Use (the “Terms”) are a legally binding agreement between you and
-    individual developer Yegor Terokhin (“we”, “us”, or “our”) governing your use of the
-    Freya mobile application and related services, software, and web pages (together, the
-    “Services”).
-  </p>
-
-  <p>
-    By using the Services, you agree to be bound by these Terms and our Privacy Policy.
-    If you do not agree, do not use the Services.
-  </p>
-
-  <h3>1. Who provides the Services</h3>
-
-  <p>The Services are provided by:</p>
-
-  <p><strong>Developer:</strong> Yegor Terokhin</p>
-
-  <p>
-    <strong>Contact e-mail:</strong>
-    <a href="mailto:iterokhin.dev@gmail.com">iterokhin.dev@gmail.com</a>.
-  </p>
-
-  <p>
-    We do not maintain our own dedicated servers for long-term storage of complete sets of
-    your personal data. The App runs on your device, and we rely on third-party infrastructure,
-    analytics, payment, and AI providers, as described in our Privacy Policy.
-  </p>
-
-  <p>
-    For information about what data we collect and how we process it, please refer to our
-    <strong>Privacy Policy</strong>, which forms part of these Terms.
-  </p>
-
-  <h3>2. Eligibility and age restrictions</h3>
-
-  <ul>
-    <li>The App is not intended for children under 16 years of age. Persons under 16 are not allowed to use the Services.</li>
-    <li>If you use the Services on behalf of a legal entity, you represent that you have the authority to bind that entity to these Terms.</li>
-  </ul>
-
-  <h3>3. Nature of the App and no professional advice</h3>
-
-  <p>
-    Freya is a mobile application that provides life advice tips.
-  </p>
-
-  <p>
-    All content in the App is for entertainment, cultural, and informational purposes only. It:
-  </p>
-
-  <ul>
-    <li>does not constitute medical, psychological, legal, financial, or other professional advice, and</li>
-    <li>should not be used for making decisions.</li>
-  </ul>
-
-  <p>
-    The App is not intended to diagnose, treat, or prevent any disease or condition, and it
-    does not replace consultations with qualified professionals.
-  </p>
-
-  <p>
-    You are solely responsible for any decisions or actions you take based on information,
-    forecasts, or recommendations provided through the App. If you have questions about health,
-    mental condition, finances, legal matters, or similar topics, you should consult licensed
-    professionals.
-  </p>
-
-  <h3>4. Local storage only</h3>
-
-  <p>
-    We do not create user accounts or user profiles and we do not require registration or login
-    in order to use the App. All information necessary for the functioning of the App, including
-    your user information (such as your birth details, information about other individuals used
-    for compatibility reports, and your report history), is stored locally on your device only.
-    We do not operate our own servers that collect or store your user information and we do not
-    maintain copies of such information outside your device.
-  </p>
-
-  <p>
-    Accordingly, if you delete the App from your device, all information stored in the App on
-    that device – including your user information and your local report history – will be
-    deleted from that device and cannot be recovered, reconstructed, or otherwise restored by
-    us.
-  </p>
-
-  <h3>5. Data and privacy</h3>
-
-  <p>
-    We use certain information about you in connection with your use of the App. Our collection
-    and use of personal data is governed by our Privacy Policy, which describes in detail:
-  </p>
-
-  <ul>
-    <li>what information we use</li>
-    <li>how and why we use it</li>
-    <li>with whom we may share it</li>
-    <li>what rights you may have and how to exercise them.</li>
-  </ul>
-
-  <p>
-    By using the App, you acknowledge that you have read and understood our Privacy Policy.
-  </p>
-
-  <h3>6. Third-party services</h3>
-
-  <p>
-    To operate the App, we use third-party service providers, such as:
-  </p>
-
-  <ul>
-    <li>AI providers for generating texts</li>
-    <li>payment and subscription management providers integrated with the Apple App Store</li>
-    <li>analytics and diagnostics providers.</li>
-  </ul>
-
-  <p>
-    Your use of the App may be subject to the terms and privacy policies of these third parties
-    (for example, Apple’s terms for purchases and subscriptions).
-  </p>
-
-  <h3>7. Acceptable use</h3>
-
-  <p>
-    You agree to use the Services only in a lawful manner and in accordance with these Terms.
-    In particular, you must not:
-  </p>
-
-  <ul>
-    <li>violate the rights of others, including privacy, intellectual property, and reputation rights</li>
-    <li>provide deliberately false information for the purpose of misleading others or abusing the Service</li>
-    <li>attempt to hack, disrupt, or interfere with the normal operation of the App, or circumvent technical protections</li>
-    <li>use the App to create, upload, or distribute illegal, harmful, hateful, discriminatory, or defamatory content.</li>
-  </ul>
-
-  <p>
-    You may not reproduce, modify, copy, resell, or otherwise use the App or its content for
-    commercial purposes without our prior written consent, except where such use is expressly
-    permitted by law.
-  </p>
-
-  <h3>8. Intellectual property and license</h3>
-
-  <p>
-    All rights to the App, including:
-  </p>
-
-  <ul>
-    <li>software code, design, interfaces, texts, illustrations, images, graphics, and logos, and</li>
-    <li>the selection, arrangement, and structure of content,</li>
-  </ul>
-
-  <p>
-    belong to the Developer or relevant rights holders and are protected by intellectual
-    property laws.
-  </p>
-
-  <p>
-    Subject to your compliance with these Terms, we grant you a limited, non-exclusive,
-    revocable, non-transferable, personal license to install and use the App and its content on
-    your device for your private, non-commercial use.
-  </p>
-
-  <h3>9. Purchases, subscriptions, and auto-renewal</h3>
-
-  <p>
-    Certain features of the App may be available on a paid basis as:
-  </p>
-
-  <ul>
-    <li>subscriptions, and/or</li>
-    <li>one-time in-app purchases.</li>
-  </ul>
-
-  <p>
-    Payments are processed via the Apple App Store and, where applicable, subscription
-    management providers integrated with the App Store.
-  </p>
-
-  <p>By purchasing a subscription or in-app product, you:</p>
-
-  <ul>
-    <li>confirm your purchase in the Apple App Store interface, and</li>
-    <li>agree that the amount shown there (plus applicable taxes) will be charged to your selected payment method,</li>
-    <li>agree to Apple’s terms and policies and any applicable terms of third-party subscription providers.</li>
-  </ul>
-
-  <p>
-    Subscriptions may automatically renew for the same period unless you cancel them in your
-    Apple ID / App Store account settings before the next billing date.
-  </p>
-
-  <p>
-    Deleting the App from your device does not automatically cancel your subscription. To stop
-    future charges, you must cancel the subscription via your Apple ID / App Store settings.
-  </p>
-
-  <p>
-    Refunds for purchases and subscriptions made via the Apple App Store are governed by
-    Apple’s refund policies. We generally do not issue direct refunds and do not control Apple’s
-    decisions about refunds.
-  </p>
-
-  <h3>10. Feedback</h3>
-
-  <p>
-    If you choose to send us feedback, ideas, or suggestions for improving the App (“Feedback”),
-    you grant us a free, non-exclusive, worldwide license to use such Feedback for developing,
-    improving, and marketing our Services, without any obligation to compensate you, unless
-    otherwise agreed in writing.
-  </p>
-
-  <h3>11. Disclaimer of warranties</h3>
-
-  <p>
-    The App and all Services and content provided through it are provided “as is” and “as available”.
-  </p>
-
-  <p>
-    To the maximum extent permitted by applicable law, we do not make any warranties, express or implied, including but not limited to:
-  </p>
-
-  <ul>
-    <li>warranties of accuracy, completeness, usefulness, or timeliness of content</li>
-    <li>warranties of merchantability or fitness for a particular purpose</li>
-    <li>warranties that the App will be uninterrupted or error-free.</li>
-  </ul>
-
-  <p>
-    The App may from time to time be unavailable in whole or in part due to maintenance,
-    technical issues, or other reasons. We do not guarantee the preservation of data stored only
-    on your device (including reports and local history) in case of App deletion, device
-    failure, operating system updates, or other events.
-  </p>
-
-  <p>Your use of the App is at your own risk.</p>
-
-  <h3>12. Limitation of liability</h3>
-
-  <p>
-    To the maximum extent permitted by applicable law, we and our partners will not be liable for:
-  </p>
-
-  <ul>
-    <li>indirect, incidental, special, punitive, or consequential damages</li>
-    <li>loss of profits, loss of data, or loss of business reputation</li>
-    <li>any emotional or psychological harm</li>
-    <li>failure to achieve any expected effect or result from using the App.</li>
-  </ul>
-
-  <p>
-    Nothing in these Terms excludes or limits liability where such exclusion or limitation is
-    not allowed by applicable law.
-  </p>
-
-  <h3>13. Termination</h3>
-
-  <p>You may stop using the App at any time by deleting it from your device.</p>
-
-  <p>We may suspend or terminate your access to the App if:</p>
-
-  <ul>
-    <li>you materially violate these Terms or applicable law, or</li>
-    <li>your use of the App creates a serious risk of fraud, abuse, or harm to us or other users, or</li>
-    <li>we decide to discontinue the App, in whole or in part.</li>
-  </ul>
-
-  <p>
-    Termination of access does not affect rights and obligations that have already arisen (for
-    example, obligations related to purchases made via the Apple App Store, subject to Apple’s
-    policies and applicable law).
-  </p>
-
-  <h3>14. Governing law and jurisdiction</h3>
-
-  <p>These Terms are governed by the laws of the Czech Republic.</p>
-
-  <p>
-    Any disputes arising out of or in connection with these Terms or your use of the App will be
-    submitted to the competent courts of the Czech Republic, unless mandatory consumer
-    protection laws in your country require a different approach (for example, allowing you to
-    bring a claim in your local courts).
-  </p>
-
-  <p>
-    Before starting formal proceedings, we encourage you to contact us at
-    <a href="mailto:iterokhin.dev@gmail.com">iterokhin.dev@gmail.com</a> and attempt to resolve the issue informally.
-  </p>
-
-  <h3>15. Changes to these Terms</h3>
-
-  <p>
-    We may update these Terms from time to time. The current version is always available in the
-    App and/or in the relevant section of the Apple App Store.
-  </p>
-
-  <p>
-    If we make material changes, we may notify you in the App or by other reasonable means. By
-    continuing to use the App after such changes take effect, you agree to the updated Terms. If
-    you do not agree, you must stop using the Services.
-  </p>
-
-  <h3>16. Contact</h3>
-
-  <p>If you have any questions about these Terms, please contact us at:</p>
-
-  <p>
-    <strong>E-mail:</strong>
-    <a href="mailto:iterokhin.dev@gmail.com">iterokhin.dev@gmail.com</a>.
-  </p>
+<div class="wrapper">
+
+  <header>
+    <p class="app-name">Freya</p>
+    <h1>Terms of Use</h1>
+    <div class="meta">
+      <div class="meta-item">Published <span>1 January 2026</span></div>
+      <div class="meta-item">Developer <span>Yegor Terokhin</span></div>
+    </div>
+    <div class="divider"></div>
+  </header>
+
+  <div class="intro">
+    These Terms of Use (the "Terms") are a legally binding agreement between you and individual developer Yegor Terokhin ("we", "us", or "our") governing your use of the Freya mobile application and related services, software, and web pages (together, the "Services").<br><br>
+    By using the Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree, do not use the Services.
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <p class="section-number">Section 01</p>
+    <h2>Who provides the Services</h2>
+    <div class="highlight-box">
+      <strong>Developer:</strong> Yegor Terokhin<br>
+      <strong>Contact e-mail:</strong> <a href="mailto:iterokhin.dev@gmail.com">iterokhin.dev@gmail.com</a>
+    </div>
+    <p>We do not maintain our own dedicated servers for long-term storage of complete sets of your personal data. The App runs on your device, and we rely on third-party infrastructure, analytics, payment, and AI providers, as described in our Privacy Policy.</p>
+    <p>For information about what data we collect and how we process it, please refer to our <strong>Privacy Policy</strong>, which forms part of these Terms.</p>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <p class="section-number">Section 02</p>
+    <h2>Eligibility and age restrictions</h2>
+    <ul>
+      <li>The App is not intended for children under 16 years of age. Persons under 16 are not allowed to use the Services.</li>
+      <li>If you use the Services on behalf of a legal entity, you represent that you have the authority to bind that entity to these Terms.</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <p class="section-number">Section 03</p>
+    <h2>Nature of the App and no professional advice</h2>
+    <p>Freya is a mobile application that provides life advice tips.</p>
+    <p>All content in the App is for entertainment, cultural, and informational purposes only. It:</p>
+    <ul>
+      <li>does not constitute medical, psychological, legal, financial, or other professional advice, and</li>
+      <li>should not be used for making decisions.</li>
+    </ul>
+    <p>The App is not intended to diagnose, treat, or prevent any disease or condition, and it does not replace consultations with qualified professionals.</p>
+    <p>You are solely responsible for any decisions or actions you take based on information or recommendations provided through the App. If you have questions about health, mental condition, finances, legal matters, or similar topics, you should consult licensed professionals.</p>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <p class="section-number">Section 04</p>
+    <h2>Local storage only</h2>
+    <p>We do not create user accounts or user profiles and we do not require registration or login in order to use the App. All information necessary for the functioning of the App, including your user information (such as your birth details and your history), is stored locally on your device only. We do not operate our own servers that collect or store your user information and we do not maintain copies of such information outside your device.</p>
+    <p>Accordingly, if you delete the App from your device, all information stored in the App on that device — including your user information and your local report history — will be deleted from that device and cannot be recovered, reconstructed, or otherwise restored by us.</p>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <p class="section-number">Section 05</p>
+    <h2>Data and privacy</h2>
+    <p>We use certain information about you in connection with your use of the App. Our collection and use of personal data is governed by our Privacy Policy, which describes in detail:</p>
+    <ul>
+      <li>what information we use</li>
+      <li>how and why we use it</li>
+      <li>with whom we may share it</li>
+      <li>what rights you may have and how to exercise them.</li>
+    </ul>
+    <p>By using the App, you acknowledge that you have read and understood our Privacy Policy.</p>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <p class="section-number">Section 06</p>
+    <h2>Third-party services</h2>
+    <p>To operate the App, we use third-party service providers, such as:</p>
+    <ul>
+      <li>AI providers for generating texts</li>
+      <li>payment and subscription management providers integrated with the Apple App Store</li>
+      <li>analytics and diagnostics providers.</li>
+    </ul>
+    <p>Your use of the App may be subject to the terms and privacy policies of these third parties (for example, Apple's terms for purchases and subscriptions).</p>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <p class="section-number">Section 07</p>
+    <h2>Acceptable use</h2>
+    <p>You agree to use the Services only in a lawful manner and in accordance with these Terms. In particular, you must not:</p>
+    <ul>
+      <li>violate the rights of others, including privacy, intellectual property, and reputation rights</li>
+      <li>provide deliberately false information for the purpose of misleading others or abusing the Service</li>
+      <li>attempt to hack, disrupt, or interfere with the normal operation of the App, or circumvent technical protections</li>
+      <li>use the App to create, upload, or distribute illegal, harmful, hateful, discriminatory, or defamatory content.</li>
+    </ul>
+    <p>You may not reproduce, modify, copy, resell, or otherwise use the App or its content for commercial purposes without our prior written consent, except where such use is expressly permitted by law.</p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <p class="section-number">Section 08</p>
+    <h2>Intellectual property and license</h2>
+    <p>All rights to the App, including:</p>
+    <ul>
+      <li>software code, design, interfaces, texts, illustrations, images, graphics, and logos, and</li>
+      <li>the selection, arrangement, and structure of content,</li>
+    </ul>
+    <p>belong to the Developer or relevant rights holders and are protected by intellectual property laws.</p>
+    <p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, revocable, non-transferable, personal license to install and use the App and its content on your device for your private, non-commercial use.</p>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <p class="section-number">Section 09</p>
+    <h2>Purchases, subscriptions, and auto-renewal</h2>
+    <p>Certain features of the App may be available on a paid basis as subscriptions and/or one-time in-app purchases.</p>
+    <p>Payments are processed via the Apple App Store and, where applicable, subscription management providers integrated with the App Store.</p>
+    <p>By purchasing a subscription or in-app product, you:</p>
+    <ul>
+      <li>confirm your purchase in the Apple App Store interface, and</li>
+      <li>agree that the amount shown there (plus applicable taxes) will be charged to your selected payment method,</li>
+      <li>agree to Apple's terms and policies and any applicable terms of third-party subscription providers.</li>
+    </ul>
+    <p>Subscriptions may automatically renew for the same period unless you cancel them in your Apple ID / App Store account settings before the next billing date.</p>
+    <p>Deleting the App from your device does not automatically cancel your subscription. To stop future charges, you must cancel the subscription via your Apple ID / App Store settings.</p>
+    <p>Refunds for purchases and subscriptions made via the Apple App Store are governed by Apple's refund policies. We generally do not issue direct refunds and do not control Apple's decisions about refunds.</p>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <p class="section-number">Section 10</p>
+    <h2>Feedback</h2>
+    <p>If you choose to send us feedback, ideas, or suggestions for improving the App ("Feedback"), you grant us a free, non-exclusive, worldwide license to use such Feedback for developing, improving, and marketing our Services, without any obligation to compensate you, unless otherwise agreed in writing.</p>
+  </section>
+
+  <!-- 11 -->
+  <section>
+    <p class="section-number">Section 11</p>
+    <h2>Disclaimer of warranties</h2>
+    <p>The App and all Services and content provided through it are provided "as is" and "as available".</p>
+    <p>To the maximum extent permitted by applicable law, we do not make any warranties, express or implied, including but not limited to:</p>
+    <ul>
+      <li>warranties of accuracy, completeness, usefulness, or timeliness of content</li>
+      <li>warranties of merchantability or fitness for a particular purpose</li>
+      <li>warranties that the App will be uninterrupted or error-free.</li>
+    </ul>
+    <p>The App may from time to time be unavailable in whole or in part due to maintenance, technical issues, or other reasons. We do not guarantee the preservation of data stored only on your device (including reports and local history) in case of App deletion, device failure, operating system updates, or other events.</p>
+    <p>Your use of the App is at your own risk.</p>
+  </section>
+
+  <!-- 12 -->
+  <section>
+    <p class="section-number">Section 12</p>
+    <h2>Limitation of liability</h2>
+    <p>To the maximum extent permitted by applicable law, we and our partners will not be liable for:</p>
+    <ul>
+      <li>indirect, incidental, special, punitive, or consequential damages</li>
+      <li>loss of profits, loss of data, or loss of business reputation</li>
+      <li>any emotional or psychological harm</li>
+      <li>failure to achieve any expected effect or result from using the App.</li>
+    </ul>
+    <p>Nothing in these Terms excludes or limits liability where such exclusion or limitation is not allowed by applicable law.</p>
+  </section>
+
+  <!-- 13 -->
+  <section>
+    <p class="section-number">Section 13</p>
+    <h2>Termination</h2>
+    <p>You may stop using the App at any time by deleting it from your device.</p>
+    <p>We may suspend or terminate your access to the App if:</p>
+    <ul>
+      <li>you materially violate these Terms or applicable law, or</li>
+      <li>your use of the App creates a serious risk of fraud, abuse, or harm to us or other users, or</li>
+      <li>we decide to discontinue the App, in whole or in part.</li>
+    </ul>
+    <p>Termination of access does not affect rights and obligations that have already arisen (for example, obligations related to purchases made via the Apple App Store, subject to Apple's policies and applicable law).</p>
+  </section>
+
+  <!-- 14 -->
+  <section>
+    <p class="section-number">Section 14</p>
+    <h2>Governing law and jurisdiction</h2>
+    <p>These Terms are governed by the laws of the Czech Republic.</p>
+    <p>Any disputes arising out of or in connection with these Terms or your use of the App will be submitted to the competent courts of the Czech Republic, unless mandatory consumer protection laws in your country require a different approach (for example, allowing you to bring a claim in your local courts).</p>
+    <p>Before starting formal proceedings, we encourage you to contact us at <a href="mailto:iterokhin.dev@gmail.com">iterokhin.dev@gmail.com</a> and attempt to resolve the issue informally.</p>
+  </section>
+
+  <!-- 15 -->
+  <section>
+    <p class="section-number">Section 15</p>
+    <h2>Changes to these Terms</h2>
+    <p>We may update these Terms from time to time. The current version is always available in the App and/or in the relevant section of the Apple App Store.</p>
+    <p>If we make material changes, we may notify you in the App or by other reasonable means. By continuing to use the App after such changes take effect, you agree to the updated Terms. If you do not agree, you must stop using the Services.</p>
+  </section>
+
+  <!-- 16 -->
+  <section>
+    <p class="section-number">Section 16</p>
+    <h2>Contact</h2>
+    <p>If you have any questions about these Terms, please contact us at:</p>
+    <div class="highlight-box">
+      <strong>E-mail:</strong> <a href="mailto:iterokhin.dev@gmail.com">iterokhin.dev@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-app">Freya</p>
+    <p>© 2026 Yegor Terokhin · All rights reserved</p>
+  </footer>
+
+</div>
 </body>
 </html>
